@@ -1,0 +1,57 @@
+.overlay {
+    animation: appear 0.4s ease-out;
+    background-color: #00000070;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+}
+  
+.overlay.hidden {
+    display: none;
+}
+
+.item {
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.item-menu {
+    margin: 24px;
+}
+
+.mobile-menu {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(0%);
+    transition: transform 0.35s;
+    width: 280px;
+    z-index: 3;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.mobile-menu.hidden {
+    transform: translateX(280px);
+    transition: all 0.35s;
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav-items {
+        display: none !important;
+    }
+
+    .icon {
+        display: block !important;
+    }
+
+}

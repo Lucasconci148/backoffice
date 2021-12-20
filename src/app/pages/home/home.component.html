@@ -1,0 +1,62 @@
+<!--CARD TOTAL SUPLY AND TOKEN INFO-->
+<div class="card">
+    <h1>TOKEN INFO</h1>
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;">
+
+        <p class="text--title">Total suply</p>
+        <p>1.000.000.000</p>
+    
+        <p class="text--title">Total disponible</p>
+        <p>200.850.000</p>
+
+        <button mat-raised-button color="warn" (click)="conectToAccount()">
+          Conectar Billetera
+        </button>
+
+        <p class="text--title"> {{ walletId }}</p>
+    </div>
+</div>
+
+<!--CARD TRANSFER-->
+<div class="card">
+  <h1>TRANSFERIR</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Billetera</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="warn">Warn</button>
+
+</div>
+
+<!--CARD MOVEMENTS-->
+<div class="card">
+    <h1>ULTIMOS MOVIMIENTOS</h1>
+
+    <table mat-table [dataSource]="dataSource" style="width: 100%;">
+        
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Billetera </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="cant">
+        <th mat-header-cell *matHeaderCellDef> Recibio </th>
+        <td mat-cell *matCellDef="let element"> {{element.cant}} </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+

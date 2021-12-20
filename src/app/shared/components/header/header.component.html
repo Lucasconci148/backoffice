@@ -1,0 +1,22 @@
+<div style="padding: 24px; display: flex; flex-direction: row; justify-content: space-between;  max-height: 20px; background-color: white;">
+    <div>
+        <img src="../../../../assets/images/incluit.png" 
+        style="
+            height: 45px;
+            width: auto;
+            margin-top: -13px;">
+    </div>
+    <div style="display: flex; flex-direction: row;" class="nav-items">
+       <div *ngFor="let item of menuItems" class="item" (click)="redirectToPage(item)"> {{ item.name }} </div>
+    </div>
+
+    <div class="icon" style="display: none;" (click)="openMenu()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+    </div>
+</div>
+
+<div class="mobile-menu" [class.hidden]="!showMenu">
+    <div *ngFor="let item of menuItems" class="item-menu" (click)="redirectToPage(item)"> {{ item.name }} </div>
+</div>
+
+<div class="overlay" [class.hidden]="!showMenu" (click)="clickOverlay()"></div>
