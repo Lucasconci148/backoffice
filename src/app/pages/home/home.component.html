@@ -26,17 +26,28 @@
 <div class="card">
   <h1>TRANSFERIR</h1>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Billetera</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div style="
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;">
+    
+    <mat-form-field appearance="fill" style="margin-right: 20px;">
+      <mat-label>Billetera</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input maxlength="3" matInput>
+    </mat-form-field>
+  </div>
 
-  <button mat-raised-button color="warn">Warn</button>
-
+  <button mat-raised-button color="warn">Transferir</button>
 </div>
 
 <!--CARD MOVEMENTS-->
